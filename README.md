@@ -5,6 +5,13 @@ testing. This allows for better functional testing of your Drupal sites.
 
 It also makes test driven development with Drupal significantly easier, as you can make assertions on items that you create through the UI.
 
+## About this fork (eelkeblok)
+This repository has the first small steps in trying to get URL-based calls (e.g.
+`$I->amOnPage()`) to work. This is impossible, so don't bother using this fork. 
+I've actually issued a [pull request](https://github.com/Chapabu/codeception-module-drupal/pull/4) 
+to the original repository to make an addition to the README to explain this and 
+tie things into the official Codeception documentation.
+
 ## Installation
 
 ```bash
