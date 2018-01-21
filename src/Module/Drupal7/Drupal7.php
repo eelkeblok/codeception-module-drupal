@@ -1,11 +1,13 @@
 <?php namespace Codeception\Module\Drupal7;
 
 use Codeception\Exception\DrupalNotFoundException;
+use Codeception\Lib\Connector\Drupal7Connector;
 use Codeception\Module;
 use Codeception\Module\Drupal7\Submodules\EntityTrait;
 use Codeception\Module\Drupal7\Submodules\FieldTrait;
 use Codeception\Module\DrupalBaseModule;
 use Codeception\Module\DrupalModuleInterface;
+use Codeception\TestInterface;
 use Codeception\Util\Shared\Asserts;
 
 /**
@@ -28,6 +30,15 @@ class Drupal7 extends DrupalBaseModule implements DrupalModuleInterface
         $this->bootstrapDrupal();
 
     }
+
+    /**
+     * @inheritDoc
+     */
+    public function _before(TestInterface $test) {
+        parent::_before($test);
+        $this->client = new Drupal7Connector();
+    }
+
 
     /**
      * { @inheritdoc }
@@ -58,4 +69,6 @@ class Drupal7 extends DrupalBaseModule implements DrupalModuleInterface
 
         return true;
     }
+
+
 }

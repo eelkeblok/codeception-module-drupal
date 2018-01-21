@@ -1,8 +1,11 @@
-<?php namespace Codeception\Module;
+<?php
 
-use Codeception\Module;
+namespace Codeception\Module;
 
-abstract class DrupalBaseModule extends Module
+use Codeception\Lib\Framework;
+use Codeception\TestInterface;
+
+abstract class DrupalBaseModule extends Framework
 {
     /**
      * @var array
